@@ -11,18 +11,19 @@
 
 <form method="post" action="/tracks">
   <div>
-    <label>Title:</label>
+    <label>Title *</label>
     <input type="text" name="title" value="<%= @track && @track.title %>">
   </div>
   <div>
-    <label>Author:</label>
+    <label>Author *</label>
     <input type="text" name="author" value="<%= @track && @track.author %>">
   </div>  
     <div>
-    <label>URL:</label>
+    <label>URL</label>
     <input type="text" name="url" value="<%= @track && @track.url %>">
   </div>
   <div>
     <input type="submit" value="Submit" class="button">
   </div>
+  <small>* Required fields
 </form>

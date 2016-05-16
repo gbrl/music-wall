@@ -17,14 +17,17 @@ body {
   /* IE6-9 */ }
   body section {
     background-color: #DDDDE0;
+    margin: 1%;
     padding: 2% 2% 5% 2%; }
     body section .track {
       border-bottom: 1px solid #eee;
-      padding: 10px 0 8px 0; }
+      padding: 12px 0 4px 0; }
       body section .track small {
         color: #666; }
+      body section .track h3 {
+        font-size: 24px; }
   body footer {
-    padding: 2%; }
+    padding: 0 1%; }
   body #title {
     color: black; }
     body #title h1 {
