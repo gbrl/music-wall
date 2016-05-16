@@ -26,6 +26,12 @@ post '/tracks' do
     url:     params[:url],
     author:  params[:author]
   )
+
+  if session && session["user"]
+   @user = User.find_by_username session["user"]
+   @track.user = @user if @user
+  end
+
   if @track.save
     redirect '/tracks'
   else
