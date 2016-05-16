@@ -22,9 +22,7 @@ body {
   body footer {
     padding: 2%; }
   body #title {
-    text-decoration: none;
-    color: black;
-    font-weight: bold; }
+    color: black; }
     body #title h1 {
       font-size: 32px;
       font-weight: bold;
