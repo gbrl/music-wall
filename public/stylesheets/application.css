@@ -17,6 +17,8 @@ body {
     body section .track {
       border-bottom: 1px solid #eee;
       padding-top: 15px; }
+      body section .track small {
+        color: #666; }
   body footer {
     padding: 2%; }
   body #title {

@@ -1,4 +1,9 @@
   <div class="track">
-  <h1><a href="/tracks/<%= @track.id %>"><%= @track.title %></a> </h1> 
+  <h2><%= @track.title %></h2> 
+  <% if @track.url %>
+  <h3><a href="<%= @track.url %>"><%= @track.url %></a> </h3> 
+  <% end %>
   <small>by <%= @track.author %></small>
   </div>
+  <br />
+  <a href="/tracks" >&larr; Back to tracks</a>

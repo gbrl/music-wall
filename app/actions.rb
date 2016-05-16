@@ -1,6 +1,7 @@
 # Homepage (Root path)
 get '/' do
   erb :index
+  redirect '/tracks'
 end
 
 get '/tracks' do
