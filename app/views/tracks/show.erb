@@ -1,7 +1,7 @@
   <div class="track">
   <h2><%= @track.title %></h2> 
   <% if @track.url %>
-  <h3><a href="<%= @track.url %>"><%= @track.url %></a> </h3> 
+  <h3><a href="http://<%= @track.url %>" target="_blank"><%= @track.url %></a> </h3> 
   <% end %>
   <small>by <%= @track.author %></small>
   </div>
