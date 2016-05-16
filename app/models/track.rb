@@ -3,5 +3,9 @@ class Track < ActiveRecord::Base
 
   validates :title, presence: true
   validates :author, presence: true
+
+  def popularity
+    up_votes + down_votes
+  end
   
 end
