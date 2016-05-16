@@ -39,6 +39,27 @@ get '/tracks/new' do
   erb :'tracks/new'
 end
 
+get '/track/upvote/:id' do
+  @track = Track.find params[:id]
+  if @track
+    @track.up_votes += 1 
+    @track.save
+  end
+  @tracks = Track.all
+  redirect '/tracks'
+end
+
+get '/track/downvote/:id' do
+  @track = Track.find params[:id]
+  if @track
+    @track.down_votes -= 1 
+    @track.save
+  end
+  @tracks = Track.all
+  redirect '/tracks'
+end
+
+
 get '/tracks/:id' do
   @track = Track.find params[:id]
   erb :'tracks/show'

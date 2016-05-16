@@ -2,6 +2,6 @@
 <br />
 <% @tracks.each do |track| %>
   <div class="track">
-  <h3><a href="#">&uarr;</a><a href="#">&darr;</a> &nbsp; <a href="/tracks/<%= track.id %>"><%= track.title %></a> <small> by <%= track.author %></small></h3> 
+  <h3><% if session && session["user"] %><a href="/track/upvote/<%= track.id %>">&uarr;</a><a href="/track/downvote/<%= track.id %>">&darr;</a> &nbsp;<% end %> ( <%= track.up_votes.to_i + track.down_votes.to_i %> ) <a href="/tracks/<%= track.id %>"><%= track.title %></a> <small> by <%= track.author %></small></h3> 
   </div>
 <% end %>
