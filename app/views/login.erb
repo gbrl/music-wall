@@ -1,0 +1,15 @@
+<h4>Welcome!</h4>
+<form method="post" action="/sessions">
+  <div>
+    <label>Username *</label>
+    <input type="text" name="username" value="<%= @user && @user.username %>">
+  </div>
+    <div>
+    <label>Password *</label>
+    <input type="password" name="password" value="<%= @user && @user.password %>">
+  </div>
+  <div>
+    <input type="submit" value="Log in" class="button">
+  </div>
+  <small>* Required fields
+</form>

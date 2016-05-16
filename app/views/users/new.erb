@@ -1,6 +1,6 @@
 <% if @user && @user.errors.any? %>
   <div>
-    <strong>Some issues with your track, please fix them:</strong>
+    <strong>Some issues with your submission, please fix them:</strong>
     <ul>
       <% @user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -12,15 +12,15 @@
 <form method="post" action="/users">
   <div>
     <label>Username *</label>
-    <input type="text" name="title" value="<%= @user && @user.username %>">
+    <input type="text" name="username" value="<%= @user && @user.username %>">
   </div>
   <div>
     <label>Email *</label>
-    <input type="text" name="author" value="<%= @user && @user.email %>">
+    <input type="text" name="email" value="<%= @user && @user.email %>">
   </div>  
     <div>
     <label>Password *</label>
-    <input type="text" name="url" value="<%= @user && @user.password %>">
+    <input type="text" name="password" value="<%= @user && @user.password %>">
   </div>
   <div>
     <input type="submit" value="Submit" class="button">

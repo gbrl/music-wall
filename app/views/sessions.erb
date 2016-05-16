@@ -1,0 +1,5 @@
+<h2>Your Tracks</h2>
+<br />
+<% @sessions.each do |session| %>
+ <h3><%= session.created_at %></h3>
+<% end %>

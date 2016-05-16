@@ -1,7 +1,16 @@
-# Homepage (Root path)
+enable :sessions
+
+
+# USERS
+
+# gabe asdfasdf
+# kyle 123456
+# jim jimjim
+
+# HOMEPAGE
+
 get '/' do
   erb :index
-  redirect '/tracks'
 end
 
 # TRACK ACTIONS
@@ -25,6 +34,7 @@ post '/tracks' do
 end
 
 get '/tracks/new' do
+  session["action"] = "new"
   @track = Track.new
   erb :'tracks/new'
 end
@@ -54,7 +64,7 @@ post '/users' do
   end
 end
 
-get '/users/new' do
+get '/signup' do
   @user = User.new
   erb :'users/new'
 end
@@ -63,6 +73,41 @@ get '/users/:username' do
   @user = User.find_by_username params[:username]
   erb :'users/show'
 end
+
+# SESSION ACTIONS
+
+get '/sessions' do
+  @sessions = Session.all
+  erb :'sessions'
+end
+
+
+get '/login' do
+  @session = Session.new
+  erb :'login'
+end
+
+
+get '/logout' do
+  @user = User.find_by_username(session["user"])
+  @user.session.destroy if @user && @user.session
+  session.delete("user")
+  erb :'logout'
+end
+
+
+post '/sessions' do
+  @user = User.find_by_username(params[:username])
+
+  if @user && @user.password == params[:password]
+    session["user"] ||= @user.username
+    @session = Session.create(user: @user)
+    redirect '/tracks'
+  else
+    erb :'/login'
+  end
+end
+
 
 helpers do
   def cookie_values(parameters)
