@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
   <!-- CSS and Foundation -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.css">
   <link rel="stylesheet" href="/stylesheets/application.css">
@@ -12,11 +10,15 @@
   <script src="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.js"></script>
   <script src="/javascript/application.js"></script>
 
-
   <title>T H E &nbsp;  M U S I C &nbsp; W A L L</title>
 </head>
 <body>
-<h1>T H E &nbsp;  M U S I C &nbsp; W A L L</h1>
+<section>
+<a href="/" id="title"><h1>T H E &nbsp;  M U S I C &nbsp; W A L L</h1></a>
   <%= yield %>
+</section>
+<footer>
+    <a href="/tracks/new" class="expanded button">Post a track!</a>
+</footer>
 </body>
 </html>
