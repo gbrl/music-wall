@@ -4,6 +4,8 @@ get '/' do
   redirect '/tracks'
 end
 
+# TRACK ACTIONS
+
 get '/tracks' do
   @tracks = Track.all
   erb :'tracks/index'
@@ -32,6 +34,35 @@ get '/tracks/:id' do
   erb :'tracks/show'
 end
 
+# USER ACTIONS
+
+get '/users' do
+  @users = User.all
+  erb :'users/index'
+end
+
+post '/users' do
+  @user = User.new(
+    username:   params[:username],
+    email:      params[:email],
+    password:   params[:password]
+  )
+  if @user.save
+    redirect '/users'
+  else
+    erb :'users/new'
+  end
+end
+
+get '/users/new' do
+  @user = User.new
+  erb :'users/new'
+end
+
+get '/users/:username' do
+  @user = User.find_by_username params[:username]
+  erb :'users/show'
+end
 
 helpers do
   def cookie_values(parameters)

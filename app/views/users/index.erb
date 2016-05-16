@@ -1,0 +1,7 @@
+<h2>All Users</h2>
+<br />
+<% @users.each do |user| %>
+  <div class="user">
+  <h3><a href="/users/<%= user.id %>"><%= user.username %></a> <small> by <%= user.email %></small></h3> 
+  </div>
+<% end %>
