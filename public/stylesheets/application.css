@@ -1,0 +1,10 @@
+body {
+  padding: 2%; }
+  body h1 {
+    font-size: 18px;
+    font-weight: bold; }
+  body form {
+    max-width: 500px;
+    margin-top: 50px; }
+
+/*# sourceMappingURL=application.css.map */
