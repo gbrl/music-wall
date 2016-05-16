@@ -12,7 +12,7 @@ end
 post '/tracks' do
   @track = Track.new(
     title:   params[:title],
-    url: params[:url],
+    url:     params[:url],
     author:  params[:author]
   )
   if @track.save
