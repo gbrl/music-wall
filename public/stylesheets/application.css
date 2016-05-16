@@ -17,7 +17,7 @@ body {
   /* IE6-9 */ }
   body section {
     background-color: #DDDDE0;
-    margin: 1%;
+    margin: 2%;
     padding: 2% 2% 5% 2%; }
     body section .track {
       border-bottom: 1px solid #eee;
@@ -27,7 +27,7 @@ body {
       body section .track h3 {
         font-size: 24px; }
   body footer {
-    padding: 0 1%; }
+    padding: 0 2%; }
   body #title {
     color: black; }
     body #title h1 {
