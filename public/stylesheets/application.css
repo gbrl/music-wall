@@ -3,6 +3,7 @@
   font-weight: light; }
 
 body {
+  color: #333;
   background-color: #606c88;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#606c88+0,3f4c6b+100;Grey+3D+%232 */
   background: #606c88;
@@ -29,7 +30,7 @@ body {
   body footer {
     padding: 0 2%; }
   body #title {
-    color: black; }
+    color: #333; }
     body #title h1 {
       font-size: 32px;
       font-weight: bold;
