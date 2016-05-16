@@ -9,7 +9,7 @@
     ( <%= track.popularity %> ) <a href="/tracks/<%= track.id %>"><%= track.title %></a> 
       <small> by <%= track.author %></small> 
       <% if track.user %>
-        <small> uploaded by <%= track.user.username %></small>
+        <small>( uploaded by <%= track.user.username %> )</small>
       <% end %>
       </h3> 
   </div>
