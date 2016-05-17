@@ -43,9 +43,13 @@
 <div class="reviews">
   <h3>Reviews</h3>
   <% @reviews.each do |r| %>
-  <p>Rating: <%= r.rating %>/5 <br /><%= r.content %></p>
-  <small>by <%= r.user.username %></small>
+  <div class="review">
+    <p>Rating: <%= r.rating %>/5 <br /><%= r.content %></p>
+    <small>by <%= r.user.username %></small>
+    <% if current_user && r.user_id == current_user.id %>
+    <br /><a href="/reviews/delete/<%= r.id %>" class="small alert button">Delete</a><br />
+    <% end %>
+  </div>
   <% end %>
 </div>
-<hr />
 <a href="/tracks" >&larr; Back to tracks</a>

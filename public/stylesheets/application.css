@@ -38,6 +38,11 @@ body {
       border-top: 1px solid white; }
       body section .reviews h3 {
         margin: 30px 0; }
+      body section .reviews a.button {
+        margin: 20px 0; }
+      body section .reviews div.review {
+        padding-top: 20px;
+        border-bottom: 1px solid white; }
     body section .votes {
       display: inline-block;
       height: 40px;

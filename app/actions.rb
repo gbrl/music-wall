@@ -110,6 +110,13 @@ post '/reviews' do
 end
 
 
+get '/reviews/delete/:id' do
+  @review = Review.find params[:id]
+  @review.destroy if @review
+  redirect back
+end
+
+
 # USER ACTIONS
 
 get '/users' do
