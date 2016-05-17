@@ -12,9 +12,9 @@
 </head>
 <body>
 <header>
-<% if session && session["user"] %>
+<% if current_user %>
   <a href="/logout" class="button alert">Log out</a>
-  <a href="#" class="button">Hi, <%= session["user"] %>!</a>
+  <a href="/users/<%= current_user.username %>" class="button">Hi, <%= current_user.username %>!</a>
 <% else %>
   <a href="/signup" class="button">Sign up</a>
   <a href="/login" class="button success">Log in</a>
@@ -25,7 +25,7 @@
   <%= yield %>
 </section>
 <footer>
-<% if session && session["user"]  %>
+<% if current_user && session[:new] == false %>
     <a href="/tracks/new" class="large expanded button">Post a track!</a>
 <% end %>
 </footer>

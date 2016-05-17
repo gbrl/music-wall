@@ -3,8 +3,10 @@
 <% @tracks.each do |track| %>
   <div class="track">
   <h3>
-    <% if session && session["user"] %>
-    <a href="/track/upvote/<%= track.id %>">&uarr;</a><a href="/track/downvote/<%= track.id %>">&darr;</a>
+    <% if current_user %>
+    <a href="/track/upvote/<%= track.id %>">&uarr;</a>
+
+    <a href="/track/downvote/<%= track.id %>">&darr;</a>
     <% end %>
      <div class='votes'><%= track.popularity %></div> &nbsp; <a href="/tracks/<%= track.id %>"><%= track.title %></a> 
       <small> by <%= track.author %></small> 

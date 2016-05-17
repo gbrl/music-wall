@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
+  has_secure_password
+  
   has_many :tracks
-  has_one :session
+  has_many :upvotes, dependent: :destroy
+  has_many :downvotes, dependent: :destroy
   
   validates :username, presence: true
   validates :email, presence: true

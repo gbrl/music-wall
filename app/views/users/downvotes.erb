@@ -1,0 +1,18 @@
+<h2>Downvotes</h2>
+<br />
+<% @votes.each do |vote| %>
+  <div class="track">
+  <h3>
+    <% if current_user %>
+    <a href="/track/upvote/<%= vote.track.id %>">&uarr;</a>
+
+    <a href="/track/downvote/<%= vote.track.id %>">&darr;</a>
+    <% end %>
+     <a href="/tracks/<%= vote.track.id %>"><%= vote.track.title %></a> 
+      <small> by <%= vote.track.author %></small> 
+      <% if vote.track.user %>
+        <small>( uploaded by <%= vote.track.user.username %> )</small>
+      <% end %>
+      </h3> 
+  </div>
+<% end %>

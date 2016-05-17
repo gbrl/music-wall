@@ -11,12 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 7) do
+ActiveRecord::Schema.define(version: 11) do
 
-  create_table "sessions", force: :cascade do |t|
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "downvotes", force: :cascade do |t|
+    t.integer "track_id"
+    t.integer "user_id"
   end
 
   create_table "tracks", force: :cascade do |t|
@@ -30,12 +29,9 @@ ActiveRecord::Schema.define(version: 7) do
     t.integer  "down_votes", default: 0
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "email"
-    t.string   "username"
-    t.string   "password"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "upvotes", force: :cascade do |t|
+    t.integer "track_id"
+    t.integer "user_id"
   end
 
 end
