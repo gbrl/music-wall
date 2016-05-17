@@ -1,6 +1,8 @@
-class RemoveLikesAndDislikes  < ActiveRecord::Migration
+class RemoveLikesAndDislikes < ActiveRecord::Migration
+
   def change
-    remove_column :users, :dislikes, :string
-    remove_column :users, :likes, :string
+    #remove_column :users, :likes
+    #remove_column :users, :dislikes
   end
+
 end

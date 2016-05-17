@@ -1,9 +1,51 @@
-  <div class="track">
+<div class="track">
   <h2><%= @track.title %></h2> 
   <% if @track.url %>
   <h3><a href="http://<%= @track.url %>" target="_blank"><%= @track.url %></a> </h3> 
   <% end %>
   <small>by <%= @track.author %></small>
+</div>
+  
+<div class="review-form">
+  <% if @errors %>
+  <div>
+    <strong>Some issues with your submission, please fix them:</strong>
+    <ul>
+      <% @errors.full_messages.each do |message| %>
+        <li class="alert"><%= message %></li>
+      <% end %>
+    </ul>
   </div>
-  <br />
-  <a href="/tracks" >&larr; Back to tracks</a>
+  <% end %>
+  <h3>Add a Review</h3>
+  <form method="post" action="/reviews">
+    <div id="stars-input">
+      <label>Rating *</label>
+      <input type="range" value="0" step="1" id="stars" name="rating">
+      <div class="rateit svg" data-rateit-backingfld="#stars" data-rateit-resetable="false"  data-rateit-ispreset="true"
+    data-rateit-min="0" data-rateit-max="5" data-rateit-starwidth="32" data-rateit-starheight="32"></div>
+    </div>
+    <br />
+    <div>
+      <label>Content *</label>
+      <textarea name="content" value="<%= @review && @review.content %>"></textarea>
+    </div>  
+    <div class="hidden">
+    <input type="text" name="id" value="<%= @track.id%>">
+    </div>
+    <div>
+      <input type="submit" value="Submit" class="button">
+    </div>
+    <small>* Required fields</small>
+  </form>
+</div>
+
+<div class="reviews">
+  <h3>Reviews</h3>
+  <% @reviews.each do |r| %>
+  <p>Rating: <%= r.rating %>/5 <br /><%= r.content %></p>
+  <small>by <%= r.user.username %></small>
+  <% end %>
+</div>
+<hr />
+<a href="/tracks" >&larr; Back to tracks</a>

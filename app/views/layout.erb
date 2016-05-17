@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- CSS and Foundation -->
+  <!-- CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.css">
+  <link href="https://rawgit.com/gjunge/rateit.js/master/scripts/rateit.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/stylesheets/application.css">  
   <!-- JS -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.js"></script>
+  <script src="/bower_components/jquery.rateit/scripts/jquery.rateit.min.js"></script>
   <script src="/javascript/application.js"></script>
+  
   <title>T H E &nbsp; M U S I C &nbsp; W A L L</title>
 </head>
 <body>
-<header>
-<% if current_user %>
-  <a href="/logout" class="button alert">Log out</a>
-  <a href="/users/<%= current_user.username %>" class="button">Hi, <%= current_user.username %>!</a>
-<% else %>
-  <a href="/signup" class="button">Sign up</a>
-  <a href="/login" class="button success">Log in</a>
-<% end %>
-</header>
-<section>
-  <a href="/" id="title"><h1>T H E &nbsp; M U S I C &nbsp; W A L L</h1></a>
-  <%= yield %>
-</section>
-<footer>
-<% if current_user && session[:new] == false %>
-    <a href="/tracks/new" class="large expanded button">Post a track!</a>
-<% end %>
-</footer>
+  <header>
+  <% if current_user %>
+    <a href="/logout" class="button alert">Log out</a>
+    <a href="/users/<%= current_user.username %>" class="button">Hi, <%= current_user.username %>!</a>
+  <% else %>
+    <a href="/signup" class="button">Sign up</a>
+    <a href="/login" class="button success">Log in</a>
+  <% end %>
+  </header>
+  <section>
+    <a href="/" id="title"><h1>T H E &nbsp; M U S I C &nbsp; W A L L</h1></a>
+    <%= yield %>
+  </section>
+  <footer>
+  <% if current_user && session[:new] == false %>
+      <a href="/tracks/new" class="large expanded button">Post a track!</a>
+  <% end %>
+  </footer>
 </body>
 </html>

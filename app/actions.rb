@@ -89,7 +89,24 @@ end
 
 get '/tracks/:id' do
   @track = Track.find params[:id]
+  @reviews = @track.reviews
+  @review = Review.new
   erb :'tracks/show'
+end
+
+
+# REVIEW ACTIONS
+
+post '/reviews' do
+  @review = Review.new(
+    rating:   params[:rating],
+    content:  params[:content]
+  )
+
+  @review.user_id = current_user.id
+  @review.track_id = params[:id]
+  @review.save
+  redirect back 
 end
 
 

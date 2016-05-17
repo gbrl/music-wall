@@ -3,6 +3,7 @@ class Track < ActiveRecord::Base
 
   has_many :downvotes, dependent: :destroy
   has_many :upvotes, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   validates :title, presence: true
   validates :author, presence: true
